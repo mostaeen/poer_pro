@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Blog Home</h2>
+{% for blog in blogs %}
+<ul class="list-group">
+  <a
+    class="link-offset-2 link-underline link-underline-opacity-0 link-opacity-50-hover"
+    href="{% url 'blog:blog_detail' blog.id %}"
+    ><li class="list-group-item">
+      {{blog.title}} &emsp; {{blog.description | truncatechars:15}}
+    </li></a
+  >
+</ul>
+{% endfor %} {% endblock %}
